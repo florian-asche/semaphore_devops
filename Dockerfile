@@ -79,9 +79,9 @@ RUN apt-get -y -qq install python3-pyyaml-env-tag python3-netaddr python3-jmespa
 #RUN apt -y install ./code-server_4.6.0_amd64.deb
 
 # Install semaphore
-RUN wget https://github.com/semaphoreui/semaphore/releases/download/v2.9.75/semaphore_2.9.75_linux_amd64.deb
-RUN sudo dpkg -i semaphore_2.9.75_linux_amd64.deb
-RUN rm semaphore_2.9.75_linux_amd64.deb
+RUN wget https://github.com/semaphoreui/semaphore/releases/download/v2.16.43/semaphore_2.16.43_linux_amd64.deb
+RUN sudo dpkg -i semaphore_2.16.43_linux_amd64.deb
+RUN rm semaphore_2.16.43_linux_amd64.deb
 
 # Cleanup
 RUN apt-get -qq clean
