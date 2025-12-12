@@ -1,0 +1,142 @@
+
+# Docker
+*.docker.tar
+*.docker.tar.gz
+*.docker.tar.xz
+*.docker.tar.zst
+*.docker.tar.bz2
+*.docker.tar.lz
+*.docker.tar.lz4
+*.docker.tar.lzma
+*.docker.tar.xz
+*.docker.tar.zst
+
+# Docker Compose
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.prod.yml
+docker-compose.dev.yml
+docker-compose.test.yml
+docker-compose.*.yml
+
+# Docker Build
+.build/
+.cache/
+.dist/
+.out/
+.target/
+
+# Docker Volumes
+volumes/
+
+# Docker Networks
+networks/
+
+# Docker Secrets
+secrets/
+
+# Docker Configs
+configs/
+
+# Docker Swarm
+stack.yml
+stack.*.yml
+
+# Docker Machine
+.machine/
+
+# Docker Toolbox
+.toolbox/
+
+# Docker for Mac
+.docker/
+
+# Docker for Windows
+.docker/
+
+# Docker Desktop
+.docker/
+
+# Docker Credential Helpers
+.credHelpers/
+
+# Docker Content Trust
+.trust/
+
+# Docker Buildx
+.buildx/
+
+# Docker Scan
+.scan/
+
+# Docker Scout
+.scout/
+
+# Docker Desktop Extensions
+.extensions/
+
+# Docker Desktop CLI
+.docker-cli/
+
+# Docker Desktop Compose
+.docker-compose/
+
+# Docker Desktop Contexts
+.docker-contexts/
+
+# Docker Desktop Credential Helpers
+.docker-credential-helpers/
+
+# Docker Desktop Extensions
+.docker-extensions/
+
+# Docker Desktop Logs
+.docker-logs/
+
+# Docker Desktop Plugins
+.docker-plugins/
+
+# Docker Desktop Settings
+.docker-settings/
+
+# Docker Desktop State
+.docker-state/
+
+# Docker Desktop Temp
+.docker-temp/
+
+# Docker Desktop Updates
+.docker-updates/
+
+# Docker Desktop Versions
+.docker-versions/
+
+# Docker Desktop
+.docker/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.sav
