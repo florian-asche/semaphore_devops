@@ -1,0 +1,55 @@
+---
+networks:
+  default:                # default network for this project
+
+services:
+  semaphoredb:
+    image: postgres:14
+    restart: on-failure:20
+    #expose:
+    #  - 5432
+    environment:
+      POSTGRES_USER: semaphore
+      POSTGRES_PASSWORD: semaphore
+      POSTGRES_DB: semaphore
+    #ports:
+    #  - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - default
+    volumes:
+      - semaphore_db:/var/lib/postgresql/data
+
+  devops:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    hostname: devops
+    restart: on-failure:20
+    ports:
+      - "2022:22"   # SSH
+      - "8080:8080" # Semaphore UI
+    networks:
+      - default
+    depends_on:
+      semaphoredb:
+        condition: service_healthy
+    volumes:
+      - homedir:/home/devops
+      - projects_data:/home/devops/repos
+      - log:/var/log
+      - semaphore_config:/etc/semaphore
+      - vscode_config:/etc/vscode
+
+
+volumes:
+    homedir:
+    projects_data:
+    log:
+    semaphore_config:
+    semaphore_db:
+    vscode_config:
