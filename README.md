@@ -20,6 +20,8 @@ docker pull ghcr.io/florian-asche/semaphore_devops:latest
 docker run -d --name semaphore-devops -p 22:22 -p 3000:3000 ghcr.io/florian-asche/semaphore_devops:latest
 ```
 
+Für das Image sind umfassende Konfigurationen in den Verzeichnissen erforderlich.
+
 ## Build
 
 Das Image wird automatisch wöchentlich gebaut. Sie können es auch manuell bauen:
