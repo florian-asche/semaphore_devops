@@ -29,6 +29,7 @@ RUN apt-get -y -qq update && \
 # Install multiple packages
 RUN apt-get -y -qq install \
         apt-transport-https \
+        software-properties-common \
         locales \
         sudo \
         wget \
@@ -69,6 +70,13 @@ RUN apt-get -y -qq install \
 RUN apt-get -y -qq install ansible ansible-lint
 # Check Ansible version
 RUN ansible --version
+
+# Install powershell
+RUN source /etc/os-release && wget -q https://packages.microsoft.com/config/ubuntu/$VERSION_ID/packages-microsoft-prod.deb
+RUN dpkg -i packages-microsoft-prod.deb
+RUN rm packages-microsoft-prod.deb
+RUN apt-get -y -qq update && \
+    apt-get -y -qq install powershell
 
 # Install additional needed python packages
 RUN apt-get -y -qq install python3-pyyaml-env-tag python3-netaddr python3-jmespath python3-passlib python3-docker python3-jinja2 python3-httplib2 python3-boto python3-requests python3-urllib3
