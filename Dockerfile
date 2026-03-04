@@ -80,7 +80,7 @@ RUN apt-get -y -qq update && \
     apt-get -y -qq install powershell
 
 # Install additional needed python packages
-RUN apt-get -y -qq install python3-pyyaml-env-tag python3-netaddr python3-jmespath python3-passlib python3-docker python3-jinja2 python3-httplib2 python3-boto python3-requests python3-urllib3
+RUN apt-get -y -qq install python3-pyyaml-env-tag python3-netaddr python3-jmespath python3-passlib python3-docker python3-jinja2 python3-httplib2 python3-boto python3-requests python3-urllib3 python3-requests-toolbelt
 #RUN pip install --no-cache-dir --upgrade PyYAML Jinja2 httplib2 boto requests urllib3
 
 # Install vscode-server
