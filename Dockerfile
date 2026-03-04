@@ -52,7 +52,8 @@ RUN apt-get -y -qq install \
         unzip \
         gpg \
         supervisor \
-        zsh
+        zsh \
+        rsync
 
 # Setup SSH
 RUN ssh-keygen -A
