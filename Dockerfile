@@ -13,7 +13,8 @@ ENV TZ=Europe/Berlin
 USER root
 
 # Add ansible user and group
-RUN useradd -rm -d /home/devops -s /bin/bash -g root -G sudo -u 1337 devops 
+RUN useradd -rm -d /home/devops -s /bin/bash -g root -G sudo -u 1337 devops
+RUN echo "devops ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Install common package for apt-add-repository
 RUN apt-get update -y -qq && \
