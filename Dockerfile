@@ -12,10 +12,6 @@ ENV TZ=Europe/Berlin
 # Run everything as root user
 USER root
 
-# Add ansible user and group
-RUN useradd -rm -d /home/devops -s /bin/bash -g root -G sudo -u 1337 devops
-RUN echo "devops ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-
 # Install common package for apt-add-repository
 RUN apt-get update -y -qq && \
     apt-get install -y -qq software-properties-common
@@ -55,6 +51,10 @@ RUN apt-get -y -qq install \
         supervisor \
         zsh \
         rsync
+
+# Add ansible user and group
+RUN useradd -rm -d /home/devops -s /bin/bash -g root -G sudo -u 1337 devops
+RUN echo "devops ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Setup SSH
 RUN ssh-keygen -A
