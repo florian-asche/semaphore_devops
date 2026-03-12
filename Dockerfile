@@ -66,7 +66,8 @@ RUN apt-get -y -qq install \
         #python2 \
         #python-pip \
         python3 \
-        python3-pip
+        python3-pip\
+        python3-venv
 
 # Install Ansible
 RUN apt-get -y -qq install ansible ansible-lint
