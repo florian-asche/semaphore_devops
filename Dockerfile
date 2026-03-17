@@ -50,7 +50,8 @@ RUN apt-get -y -qq install \
         gpg \
         supervisor \
         zsh \
-        rsync
+        rsync \
+        xorriso
 
 # Add ansible user and group
 RUN useradd -rm -d /home/devops -s /bin/bash -g root -G sudo -u 1337 devops
